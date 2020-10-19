@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="{% static 'style/style.css' %}">
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body class="bg-dgray" style="background:#222">
+<br><br><br><br><br>
+<div class="container">
+  <ul style= "width:100%;" class="nav nav-tabs mx-auto" role="tablist">
+<li style= "width:50%;" class="nav-item"><a class=" nav-link active " data-toggle="tab" href="#first"><h4>by words</h4></a></li>
+<li style= "width:50%" class="nav-item"><a class=" nav-link " data-toggle="tab" href="#second">    <h4>by date</h4></a></li>
+</ul>
+{% if faves %}
+  <div class="tab-content">
+    <div id="first" class="container tab-pane active">
+      <br><br><br>
+    {% for key, value in faves.items%}
+
+    <div  class="" id="keyword" data-toggle="collapse" href="#Item1_{{ forloop.counter }}" role="button" aria-expanded="false">
+      <!-- <i class="fa fa-bars " id = 'arrow'> </i> -->
+
+    <div class="word">
+        <a class="text" style="font-size:30px;" href="http://127.0.0.1:8000/first_app/search/?keyword={{key}}">  {{ key }}  </a>
+        <p class="">{{ value|length }}</p>
+    </div>
+  </div> <br>
+  <div class="collapse s" id = "Item1_{{ forloop.counter }}">
+      {% for line in value %}
+      <br>
+      {% for word in line %}
+      <a class="text-muted" href="http://127.0.0.1:8000/first_app/search/?keyword={{word}}">  {{ word }}  </a>
+      {% endfor %}
+        <br>
+      {% endfor %}
+      <br>
+  </div>
+      <br>
+      {% endfor %}
+      {% else %}
+      <p>NO SAVED SENTENCES YET</p>
+      {% endif %}
+          </div>
+          <div id="second" class="container tab-pane fade">
+            <br><br>
+            {% if bydate %}
+              {% for line in bydate %}
+              <br>
+              {% for word in line %}
+              <a class="text-muted" href="http://127.0.0.1:8000/first_app/search/?keyword={{word}}">  {{ word }}  </a>
+              {% endfor %}
+                <br>
+              {% endfor %}
+            {% else %}
+            <p>NO SAVED SENTENCES YET</p>
+            {% endif %}
+            <br><br><br>
+          </div>
+      </div>
+    </div>
+    <script
+       src="https://code.jquery.com/jquery-3.3.1.min.js"
+       integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+       crossorigin="anonymous"></script>
+   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>
