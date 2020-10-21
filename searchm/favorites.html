@@ -12,12 +12,12 @@
 <br><br><br><br><br>
 <div class="container">
   <ul style= "width:100%;" class="nav nav-tabs mx-auto" role="tablist">
-<li style= "width:50%;" class="nav-item"><a class=" nav-link active " data-toggle="tab" href="#first"><h4>by words</h4></a></li>
+<li style= "width:50%;" class="nav-item"><a class=" nav-link active " data-toggle="tab" href="#sentences_finder"><h4>by words</h4></a></li>
 <li style= "width:50%" class="nav-item"><a class=" nav-link " data-toggle="tab" href="#second">    <h4>by date</h4></a></li>
 </ul>
 {% if faves %}
   <div class="tab-content">
-    <div id="first" class="container tab-pane active">
+    <div id="sentences_finder" class="container tab-pane active">
       <br><br><br>
     {% for key, value in faves.items%}
 
@@ -25,7 +25,7 @@
       <!-- <i class="fa fa-bars " id = 'arrow'> </i> -->
 
     <div class="word">
-        <a class="text" style="font-size:30px;" href="http://127.0.0.1:8000/first_app/search/?keyword={{key}}">  {{ key }}  </a>
+        <a class="text" style="font-size:30px;" href="http://127.0.0.1:8000/searchm/search/?keyword={{key}}">  {{ key }}  </a>
         <p class="">{{ value|length }}</p>
     </div>
   </div> <br>
@@ -33,7 +33,7 @@
       {% for line in value %}
       <br>
       {% for word in line %}
-      <a class="text-muted" href="http://127.0.0.1:8000/first_app/search/?keyword={{word}}">  {{ word }}  </a>
+      <a class="text-muted" href="http://127.0.0.1:8000/searchm/search/?keyword={{word}}">  {{ word }}  </a>
       {% endfor %}
         <br>
       {% endfor %}
@@ -51,7 +51,7 @@
               {% for line in bydate %}
               <br>
               {% for word in line %}
-              <a class="text-muted" href="http://127.0.0.1:8000/first_app/search/?keyword={{word}}">  {{ word }}  </a>
+              <a class="text-muted" href="http://127.0.0.1:8000/searchm/search/?keyword={{word}}">  {{ word }}  </a>
               {% endfor %}
                 <br>
               {% endfor %}

@@ -6,7 +6,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('first_app', '0001_initial'),
+        ('searchm', '0001_initial'),
     ]
 
     operations = [
@@ -14,7 +14,7 @@ class Migration(migrations.Migration):
             name='User',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('First_name', models.CharField(max_length=264)),
+                ('sentences_finder_name', models.CharField(max_length=264)),
                 ('Last_name', models.CharField(max_length=264)),
                 ('Email', models.EmailField(max_length=264, unique=True)),
             ],

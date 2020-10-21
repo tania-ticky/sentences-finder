@@ -15,7 +15,7 @@ import multiprocessing as mp
 from multiprocessing import Process, Manager
 output = mp.Queue()
 L = mp.Array('b',[])
-#for the sake of speed we don't want search through whole text and then show the result, instead we break the first file into smaller files and do the search and show the result for each of the smaller files. this method takes a big text file and write every "line_num" lines in a seperate file
+#for the sake of speed we don't want search through whole text and then show the result, instead we break the sentences_finder file into smaller files and do the search and show the result for each of the smaller files. this method takes a big text file and write every "line_num" lines in a seperate file
 def chop(file,line_num):
     adds = []
     fsize = os.path.getsize(file)

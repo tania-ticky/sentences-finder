@@ -22,8 +22,8 @@ class AccessRecord(models.Model):
         return str(self.date)
 
 class User(models.Model) :
-    First_name = models.CharField(max_length=264)
+    sentences_finder_name = models.CharField(max_length=264)
     Last_name = models.CharField(max_length=264)
     Email = models.EmailField(max_length=264, unique = True)
     def __str__(self):
-            return self.First_name
+            return self.sentences_finder_name

@@ -1,5 +1,5 @@
 from django.urls import path
-from first_app import views
+from searchm import views
 urlpatterns = [
 
     path('search/', views.search_word,name='index2'),

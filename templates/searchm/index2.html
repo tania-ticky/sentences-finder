@@ -60,7 +60,7 @@
           <div class="bookmark cvstar s text-warning" data-favorite="false" data-keyword= "{{ keyword }}">
               <i class="fa fa-star-o fa-lg"></i>
           {% for word in line %}
-          <a class="text" href="http://127.0.0.1:8000/first_app/search/?keyword={{word|remove_marks}}">  {{ word }}  </a>
+          <a class="text" href="http://127.0.0.1:8000/searchm/search/?keyword={{word|remove_marks}}">  {{ word }}  </a>
           {% endfor %}
             </div>
         <br>
@@ -86,7 +86,7 @@
     <div class="bookmark nwstar text-warning" data-favorite="false" data-keyword= "{{ keyword }}">
       <i class="fa fa-star-o fa-lg"></i>
     {% for word in line2 %}
-    <a class="text" href="http://127.0.0.1:8000/first_app/search/?keyword={{word|remove_marks}}"> {{ word }}  </a>
+    <a class="text" href="http://127.0.0.1:8000/searchm/search/?keyword={{word|remove_marks}}"> {{ word }}  </a>
     {% endfor %}
   </div>
   <br>
@@ -110,7 +110,7 @@
    <h2 class="text-muted">see also : </h2>
    {% if see_also %}
    {% for word in see_also %}
-   <a class="see_also" href="http://127.0.0.1:8000/first_app/search/?keyword={{word}}"> {{ word }}  </a>
+   <a class="see_also" href="http://127.0.0.1:8000/searchm/search/?keyword={{word}}"> {{ word }}  </a>
    {% endfor %}
       {% endif %}
       {% else %}
@@ -144,7 +144,7 @@ $(document).ready(function() {
          for(var j = 0; j < n; j++) {
            word = data[0].shift();
            keyword = word.replace(/\.|'|"|,|\?|!/g,'');
-           html += " <a class=\"text\" href=\"http://127.0.0.1:8000/first_app/search/?keyword=" + keyword + "\"> " +  word +  "</a>";
+           html += " <a class=\"text\" href=\"http://127.0.0.1:8000/searchm/search/?keyword=" + keyword + "\"> " +  word +  "</a>";
           }
           html += '</div>';
           data.shift();
@@ -177,7 +177,7 @@ $(document).ready(function() {
             for(var j = 0; j < n; j++) {
               word = data2[0].shift();
               keyword = word.replace(/\.|'|"|,|\?|!/g,'');
-              html += " <a class=\"text\" href=\"http://127.0.0.1:8000/first_app/search/?keyword=" + keyword + "\"> " +  word +  "</a>";
+              html += " <a class=\"text\" href=\"http://127.0.0.1:8000/searchm/search/?keyword=" + keyword + "\"> " +  word +  "</a>";
              }
              html += '</div>';
              data2.shift();
@@ -211,7 +211,7 @@ alert("NO MORE SENTENCES");
 
             $.ajax({
           type:"POST",
-          url: 'http://127.0.0.1:8000/first_app/fav/',
+          url: 'http://127.0.0.1:8000/searchm/fav/',
           data: {
             'which' : is_favorite,
             'sentence': sentence,

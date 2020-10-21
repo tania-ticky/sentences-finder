@@ -96,7 +96,7 @@ def search_word(request):
             news = json.dumps(news_list['sen_list'][30::])
             last_index = news_list['last_i']
     my_dict = { 'sth2':conv_list, 'news':news, 'see_also':also, 'POST' : POST, 'form':form , 'last_index' : last_index , 'keyword':keyword , 'f_news':news_list['sen_list'][0:29] }
-    return render(request,'first_app/index2.html',context = my_dict)
+    return render(request,'searchm/index2.html',context = my_dict)
 
 #this method writes selected sentences and keywords to the favorite file. it also prevents duplication of the sentence by checking if it already exists in the favorite file
 def add_sen(sentence , keyword):
@@ -157,4 +157,4 @@ def extract_fav(request):
         else:
             faves[word] = [sentence]
     my_dict = { 'faves':faves,'bydate':fav_by_date}
-    return render(request,'first_app/favorites.html',context = my_dict)
+    return render(request,'searchm/favorites.html',context = my_dict)

@@ -1,3 +1,6 @@
  dream   He believes it is a dream, and reflects on how dreary life as a traveling salesmen is. 
  dream   Captain De Stancy represents a dream of medieval nobility to Paula. 
  believes   He works at the Jewish Council and believes in cooperating with the Germans and opposing the Jewish resistance. 
+ script   Mokug, a golden hamster who had been Sarengo's slave, is rescued and brings with him a message in Riftgard script. 
+ script   Upon returning home, Gary is assured of the reality of all the events in the book when he sees that his book is still in the script of Mickey McMickey. 
+ returning   Book Two begins with Nikolai Rostov briefly returning on home leave to Moscow. 
